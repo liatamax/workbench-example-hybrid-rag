@@ -106,6 +106,8 @@ execution:
     description: NVCF Run Key for Cloud Inference
   - variable: HUGGING_FACE_HUB_TOKEN
     description: HF Token for cloning model weights locally
+  - variable: NGC_CLI_API_KEY
+    description: ""
   mounts:
   - type: project
     target: /project/
@@ -118,4 +120,12 @@ execution:
   - type: volume
     target: /mnt/milvus/
     description: Volume for storing the milvus database
+    options: ""
+  - type: host
+    target: /var/host-run/
+    description: Docker socket Host Mount
+    options: ""
+  - type: host
+    target: /mnt/host-home/
+    description: Host mount for LOCAL_NIM_HOME
     options: ""
